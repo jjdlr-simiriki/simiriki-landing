@@ -43,6 +43,13 @@ a {
 .logo {
   font-weight: 700;
   font-size: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 32px;
+  display: block;
 }
 .nav-menu {
   display: flex;
@@ -251,4 +258,24 @@ a {
   text-align: center;
   padding: 1.5rem;
   font-size: 0.9rem;
+}
+
+.footer-links {
+  margin-top: 0.5rem;
+}
+
+.footer-links a {
+  margin: 0 0.5rem;
+  color: #fff;
+  text-decoration: underline;
+}
+
+.legal-page {
+  padding: 6rem 2rem 4rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.legal-page h1 {
+  margin-top: 0;
 }
