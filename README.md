@@ -7,6 +7,9 @@ This repository contains the landing page for [simiriki.com](https://simiriki.co
 2. There is no build step. Open `index.html` in your browser to preview the site locally.
 3. Run a Lighthouse audit and address any warnings.
 
+## Content
+- The landing page includes sections for **benefits**, **testimonials**, and an interactive demo integrated with `simiriki-ai`.
+
 ### Stripe Checkout
 1. Install dependencies with `npm install`.
 2. Set the environment variables `STRIPE_SECRET_KEY`, `STRIPE_PRICE_ID` and `STRIPE_WEBHOOK_SECRET`.
