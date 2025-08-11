@@ -287,6 +287,68 @@ a {
   font-size: 2rem;
 }
 
+/* Benefits */
+.benefits {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.benefit {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Testimonials */
+.testimonials {
+  background: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.testimonial {
+  background: var(--light-bg);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial .author {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+/* Demo */
+.demo {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.demo-frame {
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  border: 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
 /* Stats */
 .stats {
   background: var(--primary-dark);
