@@ -1,248 +1,193 @@
-<!doctype html>
-<html lang="es-MX">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Simiriki — Automatiza. Escala. Transforma.</title>
-  <meta name="description" content="Consultoría y automatización con IA en Microsoft. Implementamos chatbots, flujos y funnels que venden 24/7.">
-  <link rel="icon" type="image/svg+xml" href="/img/logo.svg">
-  <link rel="icon" type="image/png" href="/img/logo.png">
-  <meta property="og:title" content="Simiriki — Automatiza. Escala. Transforma.">
-  <meta property="og:description" content="Implementamos IA y flujos en Microsoft para que tu negocio venda sin contestar mensajes.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.simiriki.com/">
-  <meta property="og:image" content="https://www.simiriki.com/img/logo.svg">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Optional Google Font (Inter). Safe fallbacks are used if blocked. -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){
-      w[l]=w[l]||[];
-      w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-      var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),
-          dl=l!='dataLayer'?'&l='+l:'';
-      j.async=true;
-      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-      f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TTG29BV');
-  </script>
-  <!-- End Google Tag Manager -->
-
-  <!-- Microsoft Clarity Tracking Code -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "ssesjal0pd");
-  </script>
-  <style>
-    /* Minimal mobile menu for demo */
-    .menu{display:flex;gap:8px;align-items:center}
-    .menu a{opacity:.9}
-    .menu .open{display:block}
-    @media(max-width:920px){
-      .menu{display:none;position:absolute;top:64px;right:12px;background:var(--ink-0);border:1px solid var(--ink-100);border-radius:12px;padding:12px;box-shadow:var(--shadow)}
-      .menu.open{display:flex;flex-direction:column;min-width:200px}
-      .nav-inner button{display:inline-flex}
-    }
-    @media(min-width:921px){
-      .nav-inner button{display:none}
-    }
-  </style>
-</head>
-<body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTG29BV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#inicio">
-        < srmg/logo.svg" alt="Simiriki logo">
-        <span>Simiriki</span>
       </a>
-      <nav>
-        <button class="button ghost" aria-label="Abrir menú" data-nav-toggle>☰</button>
-        <div class="menu" data-nav-menu>
-          <a href="#servicios">Servicios</a>
-          <a href="#casos">Casos</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contacto" class="nav-cta">Agenda</a>
-        </div>
+      <button class="nav-toggle" aria-label="Abrir menú" data-nav-toggle>
+        ☰
+      </button>
+      <nav class="nav-menu" data-nav-menu>
+        <a href="#caracteristicas">Características</a>
+        <a href="#demo">Demo</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#precios">Precios</a>
+        <a href="#contacto" class="cta">Comenzar Ahora</a>
       </nav>
-    </div>
-  </header>
+    </header>
 
-  <main id="inicio">
-    <section class="hero">
-      <div class="container">
-        <span class="kicker">IA + Microsoft</span>
-        <h1 class="headline">Automatiza. Escala. Transforma.</h1>
-        <p class="sub">Implementamos asistentes, flujos y funnels que venden 24/7. Todo integrado con tu ecosistema Microsoft (Azure, Power Automate, Outlook, Teams y Dynamics/HubSpot).</p>
-        <div class="cta-row">
-          <!-- CTA: update to your Microsoft Bookings link -->
-          <a class="button primary" href="https://outlook.office.com/bookwithme/user/15326e2aa1e14023a8057ff158d26f38@simiriki.com?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener">Agenda una llamada</a>
-          <a class="button" href="#muestra">Ver guía gratuita</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container grid grid-3">
-        <div class="card">
-          <div class="badge"><span class="dot"></span> Lanzamiento en 7 días</div>
-          <h3>Implementación express</h3>
-          <p>Tu flujo de captación, chatbot y PDF dinámico listos en una semana. Sin proyectos eternos.</p>
-        </div>
-        <div class="card">
-          <div class="badge"><span class="dot"></span> 100% Microsoft</div>
-          <h3>Integración nativa</h3>
-          <p>Forms, Power Automate, Outlook y Teams orquestados para que Simiriki trabaje por ti.</p>
-        </div>
-        <div class="card">
-          <div class="badge"><span class="dot"></span> Métricas reales</div>
-          <h3>Resultados medibles</h3>
-          <p>Panel con conversiones, tasa de respuesta y MQLs. Decisiones con datos, no con corazonadas.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="servicios" class="section">
-      <div class="container center">
-        <h2 class="h2">Servicios que venden por ti</h2>
-        <p class="lead">Diseñamos y automatizamos tu embudo completo: desde el primer clic hasta la reunión agendada.</p>
-      </div>
-      <div class="container grid grid-3" style="margin-top:24px">
-        <div class="service">
-          <h4>Asistentes y chatbots</h4>
-          <p>Respuestas instantáneas, calificación de leads y agendado automático.</p>
-        </div>
-        <div class="service">
-          <h4>Automatización de ventas</h4>
-          <p>Secuencias por email/WhatsApp, recordatorios y seguimiento 1:1.</p>
-        </div>
-        <div class="service">
-          <h4>CRM & enriquecimiento</h4>
-          <p>Mapeo a Dynamics/HubSpot, enriquecimiento nocturno y scoring.</p>
-        </div>
-        <div class="service">
-          <h4>Funnels & landing pages</h4>
-          <p>Diseño rápido, SEO listo y performance A+ en Lighthouse.</p>
-        </div>
-        <div class="service">
-          <h4>Paneles & reportes</h4>
-          <p>Clarity/GA4 + métricas de conversión y health‑checks diarios.</p>
-        </div>
-        <div class="service">
-          <h4>Seguridad & cumplimiento</h4>
-          <p>Key Vault, rate‑limit y auditoría de accesos en Azure.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="muestra" class="section">
-      <div class="container grid grid-2">
-        <div>
-          <div class="testimonial">
-            <div class="quote">“Vende sin contestar mensajes. Simiriki trabaja por ti, incluso mientras duermes.”</div>
-            <div class="cite">— Equipo Simiriki</div>
+    <main id="inicio">
+      <section class="hero">
+        <div class="hero-content">
+          <span class="badge">Lanzamiento 2025</span>
+          <h1 class="headline">Transforma tu Negocio con Simiriki</h1>
+          <p class="description">
+            Automatiza tus procesos y escala con inteligencia artificial
+            integrada.
+          </p>
+          <div class="cta-row">
+            <a href="#contacto" class="btn primary">Prueba Gratis</a>
+            <a href="#demo" class="btn">Ver Demo</a>
           </div>
-          <ul style="margin-top:18px;color:var(--ink-700)">
-            <li>Formulario → Guía en PDF con marca e insights.</li>
-            <li>Email automático con enlace a agenda.</li>
-            <li>Notificación a tu equipo por Teams.</li>
-          </ul>
         </div>
-        <div class="card">
-          <h3>Recibe la guía gratuita</h3>
-          <p>Completa el diagnóstico (2‑3 minutos) y te enviamos una guía con recomendaciones personalizadas.</p>
-          <div style="height:18px"></div>
-          <!-- TODO: Reemplaza el src con el formulario de producción -->
-          <!-- Microsoft Forms embed: replace the src with your production form link -->
-          <iframe src="https://forms.office.com/r/2xx9fx1j4x?origin=lprLink&embed=true" style="width:100%;height:420px;border:1px solid var(--ink-200);border-radius:12px" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
-          <p style="font-size:13px;color:var(--ink-500);margin-top:8px">Completa el formulario para recibir tu guía. Si el formulario no carga, <a href="https://forms.office.com/r/2xx9fx1j4x?origin=lprLink" target="_blank" rel="noopener">haz clic aquí</a>.</p>
+        <div class="hero-graphics">
+          <div class="card floating">📊 Analytics</div>
+          <div class="card floating delay-1">🚀 Performance</div>
+          <div class="card floating delay-2">🔒 Seguridad</div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="casos" class="section">
-      <div class="container center">
-        <h2 class="h2">Casos de uso</h2>
-        <p class="lead">Del lead al agendado: orquestamos cada paso para que la venta ocurra sola.</p>
-      </div>
-      <div class="container grid grid-3" style="margin-top:24px">
-        <div class="card">
-          <h3>Captación B2B</h3>
-          <p>LinkedIn Ads → Landing → PDF → Agenda → CRM con scoring.</p>
+      <section id="caracteristicas" class="features">
+        <h2 class="section-title">Características Principales</h2>
+        <div class="features-grid">
+          <div class="feature">
+            <span class="icon">⚡</span>
+            <h3>Rápido</h3>
+            <p>Implementación ágil en cuestión de días.</p>
+          </div>
+          <div class="feature">
+            <span class="icon">🤖</span>
+            <h3>Automatizado</h3>
+            <p>Flujos inteligentes que trabajan por ti.</p>
+          </div>
+          <div class="feature">
+            <span class="icon">📈</span>
+            <h3>Medible</h3>
+            <p>Paneles con métricas claras.</p>
+          </div>
+          <div class="feature">
+            <span class="icon">🔗</span>
+            <h3>Integrado</h3>
+            <p>Conecta con tus herramientas favoritas.</p>
+          </div>
+          <div class="feature">
+            <span class="icon">🔐</span>
+            <h3>Seguro</h3>
+            <p>Tus datos protegidos con cifrado.</p>
+          </div>
+          <div class="feature">
+            <span class="icon">🎯</span>
+            <h3>Escalable</h3>
+            <p>Crece sin fricción.</p>
+          </div>
         </div>
-        <div class="card">
-          <h3>Soporte con IA</h3>
-          <p>Base de conocimiento + asistente en web y correo. SLA < 1 min.</p>
+      </section>
+
+      <section id="beneficios" class="benefits">
+        <h2 class="section-title">Beneficios</h2>
+        <ul class="benefits-list">
+          <li>Aumenta la productividad hasta un 50%</li>
+          <li>Reduce costos operativos</li>
+          <li>Mejora la satisfacción de tus clientes</li>
+        </ul>
+      </section>
+
+      <section id="demo" class="demo">
+        <h2 class="section-title">Demo Interactiva</h2>
+        <p>
+          Explora nuestras capacidades de IA con un ejemplo en vivo impulsado por
+          simiriki-ai.
+        </p>
+        <div class="demo-frame">
+          <iframe
+            src="https://simiriki-ai.example.com/demo"
+            title="Simiriki AI Demo"
+            loading="lazy"
+            width="100%"
+            height="400"
+          ></iframe>
         </div>
-        <div class="card">
-          <h3>Onboarding</h3>
-          <p>Paquetes, pagos con Stripe y acceso automático a tu portal.</p>
+      </section>
+
+      <section id="nosotros" class="about">
+        <h2 class="section-title">Sobre Simiriki</h2>
+        <p>
+          Nacimos para ayudar a las empresas a automatizar y escalar sus
+          operaciones con tecnología accesible.
+        </p>
+      </section>
+
+      <section id="precios" class="pricing">
+        <h2 class="section-title">Planes y Precios</h2>
+        <div class="pricing-grid">
+          <div class="plan">
+            <h3>Básico</h3>
+            <p class="price">Gratis</p>
+            <ul>
+              <li>Hasta 3 usuarios</li>
+              <li>Soporte por correo</li>
+            </ul>
+            <a href="#contacto" class="btn primary">Comenzar</a>
+          </div>
+          <div class="plan">
+            <h3>Pro</h3>
+            <p class="price">$49/mes</p>
+            <ul>
+              <li>Usuarios ilimitados</li>
+              <li>Integraciones avanzadas</li>
+              <li>Soporte prioritario</li>
+            </ul>
+            <a href="#contacto" class="btn primary">Solicitar Demo</a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="faq" class="section">
-      <div class="container">
-        <h2 class="h2 center">Preguntas frecuentes</h2>
-        <div class="faq" style="max-width:860px;margin:18px auto 0">
-          <details open>
-            <summary>¿Cuánto tarda el setup inicial?</summary>
-            <p>De 5 a 7 días. Entregamos landing, formulario, guía PDF, emails y alertas.</p>
-          </details>
-          <details>
-            <summary>¿Trabajan con Microsoft 365 y Azure?</summary>
-            <p>Sí. Usamos Forms, Power Automate, Outlook/Teams y Azure Static Web Apps.</p>
-          </details>
-          <details>
-            <summary>¿Pueden integrarse con mi CRM?</summary>
-            <p>Claro. Dynamics, HubSpot o el tuyo via API. Incluimos enriquecimiento nocturno.</p>
-          </details>
-          <details>
-            <summary>¿Cómo miden resultados?</summary>
-            <p>Panel con tasa de conversión, MQLs, tiempo de respuesta y revenue atribuido.</p>
-          </details>
+      <section id="estadisticas" class="stats">
+        <div class="stat">
+          <span class="number" data-count="99.9">0%</span>
+          <span class="label">Tiempo Activo</span>
         </div>
-      </div>
-    </section>
-
-    <section id="contacto" class="section-sm">
-      <div class="container center">
-        <h2 class="h2">¿Listo para vender sin fricción?</h2>
-        <div class="cta-row" style="justify-content:center">
-        <!-- Footer CTA also uses the Microsoft Bookings link -->
-        <a class="button primary" href="https://outlook.office.com/bookwithme/user/15326e2aa1e14023a8057ff158d26f38@simiriki.com?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener">Agenda una llamada</a>
-          <a class="button" href="mailto:contacto@simiriki.com">contacto@simiriki.com</a>
+        <div class="stat">
+          <span class="number" data-count="50000">0</span>
+          <span class="label">Usuarios</span>
         </div>
-      </div>
-    </section>
-  </main>
+        <div class="stat">
+          <span class="number" data-count="150">0</span>
+          <span class="label">Países</span>
+        </div>
+        <div class="stat">
+          <span class="number" data-count="24">0</span>
+          <span class="label">Soporte 24/7</span>
+        </div>
+      </section>
 
-  <footer class="footer">
-    <div class="container grid grid-2">
-      <div>
-        <strong>Simiriki</strong><br>
-        Consultoría en automatización con IA. México y LATAM.
-        <div class="legal" style="margin-top:10px">© 2025 Simiriki. Todos los derechos reservados.</div>
-      </div>
-      <div class="center">
-        <a href="#inicio" class="button">↑ Volver arriba</a>
-      </div>
-    </div>
-  </footer>
+      <section id="testimonios" class="testimonials">
+        <h2 class="section-title">Testimonios</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial">
+            <p>"Simiriki revolucionó nuestros procesos en semanas."</p>
+            <span class="author">Ana Gómez, CEO de Ejemplo SA</span>
+          </div>
+          <div class="testimonial">
+            <p>
+              "La automatización inteligente nos permitió crecer sin límites."
+            </p>
+            <span class="author">Carlos Pérez, CTO de TechCorp</span>
+          </div>
+        </div>
+      </section>
 
-  <a class="wp-float" aria-label="WhatsApp" href="https://wa.me/5215555555555" target="_blank" rel="noopener">↗</a>
+      <section id="cta-final" class="cta-section">
+        <h2>¿Listo para Transformar tu Negocio?</h2>
+        <div class="cta-row">
+          <a href="#contacto" class="btn primary">Comenzar Ahora</a>
+          <a href="#nosotros" class="btn">Saber Más</a>
+          <button id="checkout-button" class="btn primary">Comprar</button>
+        </div>
+      </section>
 
-  <script src="smain.js" defer></script>
+      <section id="contacto" class="contact">
+        <h2>Contacto</h2>
+        <p>
+          Escríbenos a
+          <a href="mailto:contacto@simiriki.com">contacto@simiriki.com</a>
+        </p>
+      </section>
+    </main>
 
-</body>
+    <footer class="footer">
+      <p>© 2025 Simiriki. Todos los derechos reservados.</p>
+      <nav class="footer-links">
+        <a href="privacy.html">Política de Privacidad</a>
+        <a href="terms.html">Términos de Servicio</a>
+      </nav>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
 </html>
