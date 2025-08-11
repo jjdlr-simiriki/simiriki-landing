@@ -74,6 +74,19 @@ img{max-width:100%;display:block}
 }
 .nav-cta:hover{filter:brightness(0.95)}
 
+/* Minimal mobile menu for demo */
+.menu{display:flex;gap:8px;align-items:center}
+.menu a{opacity:.9}
+.menu .open{display:block}
+@media(max-width:920px){
+  .menu{display:none;position:absolute;top:64px;right:12px;background:var(--ink-0);border:1px solid var(--ink-100);border-radius:12px;padding:12px;box-shadow:var(--shadow)}
+  .menu.open{display:flex;flex-direction:column;min-width:200px}
+  .nav-inner button{display:inline-flex}
+}
+@media(min-width:921px){
+  .nav-inner button{display:none}
+}
+
 /* Hero */
 .hero{
   padding:96px 0 48px;
