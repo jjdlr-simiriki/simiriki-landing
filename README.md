@@ -8,8 +8,7 @@ This repository contains the landing page for [simiriki.com](https://simiriki.co
 3. Run a Lighthouse audit and address any warnings.
 
 ## Content
-- The landing page incluye secciones de **beneficios**, **testimonios** y una
-  demo interactiva integrada con `simiriki-ai`.
+- The landing page includes sections for **benefits**, **testimonials**, and an interactive demo integrated with `simiriki-ai`.
 
 ### Stripe Checkout
 1. Install dependencies with `npm install`.
