@@ -44,4 +44,22 @@ const observer = new IntersectionObserver(
   { threshold: 0.5 },
 );
 
-counters.forEach((el) => observer.observe(el));
+  counters.forEach((el) => observer.observe(el));
+
+// Stripe checkout button
+const checkoutButton = document.getElementById("checkout-button");
+if (checkoutButton) {
+  checkoutButton.addEventListener("click", async () => {
+    try {
+      const response = await fetch("/create-checkout-session", {
+        method: "POST",
+      });
+      const data = await response.json();
+      if (data.url) {
+        window.location.href = data.url;
+      }
+    } catch (err) {
+      console.error("Error initiating checkout", err);
+    }
+  });
+}
