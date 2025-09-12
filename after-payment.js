@@ -28,7 +28,7 @@ module.exports = async function (context, req) {
 
     // Retrieve the checkout session from Stripe
     const session = await stripe.checkout.sessions.retrieve(session_id, {
-      expand: ['customer', 'customer_details']
+      expand: ['customer', 'customer_details'],
     });
 
     // Only proceed if the session has been paid
@@ -57,7 +57,7 @@ module.exports = async function (context, req) {
       name,
       email,
       company,
-      answers
+      answers,
     };
 
     // Forward to your Azure Function that builds the PDF and sends email
@@ -65,7 +65,9 @@ module.exports = async function (context, req) {
     const secretHeader = process.env.AFTER_PAYMENT_SECRET;
 
     if (!guideFunctionUrl || !secretHeader) {
-      context.log.error('GUIDE_FUNCTION_URL or AFTER_PAYMENT_SECRET environment variables are missing');
+      context.log.error(
+        'GUIDE_FUNCTION_URL or AFTER_PAYMENT_SECRET environment variables are missing',
+      );
       context.res = { status: 500, body: { error: 'Server misconfiguration' } };
       return;
     }
@@ -76,9 +78,9 @@ module.exports = async function (context, req) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'X-Webhook-Secret': secretHeader
+        'X-Webhook-Secret': secretHeader,
       },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload),
     });
 
     if (!response.ok) {

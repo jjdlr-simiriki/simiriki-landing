@@ -15,7 +15,7 @@ html {
 }
 body {
   margin: 0;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   color: var(--text-color);
   background: var(--light-bg);
   line-height: 1.6;
@@ -98,11 +98,7 @@ a {
   justify-content: space-between;
   padding: 6rem 2rem 3rem;
   margin-top: 60px;
-  background: linear-gradient(
-    135deg,
-    var(--primary-color),
-    var(--secondary-color)
-  );
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: #fff;
 }
 .hero-content {
@@ -197,6 +193,37 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
+}
+
+.embed-16x9 {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+}
+.embed-16x9 iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Embed promo section */
+.embed {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.embed .embed-copy {
+  max-width: 720px;
+  margin: 0.5rem auto 1.5rem;
+  opacity: 0.85;
 }
 
 /* Benefits */

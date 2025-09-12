@@ -12,7 +12,8 @@ async function createBundle() {
     // Define the product details
     const product = await stripe.products.create({
       name: 'Guía + 30‑Min Strategy Call',
-      description: 'Bundle: Personalized automation guide plus a 30‑minute strategy call to review your automation pipeline.'
+      description:
+        'Bundle: Personalized automation guide plus a 30‑minute strategy call to review your automation pipeline.',
     });
 
     // Define the price (MXN 1,990 = 199000 cents)
@@ -20,7 +21,7 @@ async function createBundle() {
       unit_amount: 199000,
       currency: 'mxn',
       product: product.id,
-      nickname: 'Guía + Call Bundle'
+      nickname: 'Guía + Call Bundle',
     });
 
     console.log('Upsell bundle created successfully');

@@ -1,2 +1,8 @@
-node_modules
+﻿node_modules
 .env
+api/local.settings.json
+server.out.log
+server.err.log
+
+server*.log
+

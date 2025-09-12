@@ -28,16 +28,33 @@ app.post('/create-checkout-session', express.json(), async (req, res) => {
   }
 });
 
+// Mirror endpoint under /api for local testing parity with SWA
+app.post('/api/create-checkout-session', express.json(), async (req, res) => {
+  try {
+    const session = await stripe.checkout.sessions.create({
+      mode: 'payment',
+      line_items: [
+        {
+          price: process.env.STRIPE_PRICE_ID,
+          quantity: 1,
+        },
+      ],
+      success_url: `${req.headers.origin}/success.html`,
+      cancel_url: `${req.headers.origin}/cancel.html`,
+    });
+    res.json({ url: session.url });
+  } catch (err) {
+    console.error('Error creating checkout session', err);
+    res.status(500).json({ error: 'Unable to create session' });
+  }
+});
+
 // Webhook endpoint to log purchases
 app.post('/webhook', express.raw({ type: 'application/json' }), (req, res) => {
   const sig = req.headers['stripe-signature'];
   let event;
   try {
-    event = stripe.webhooks.constructEvent(
-      req.body,
-      sig,
-      process.env.STRIPE_WEBHOOK_SECRET
-    );
+    event = stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_WEBHOOK_SECRET);
   } catch (err) {
     console.log('Webhook signature verification failed.', err.message);
     return res.status(400).send(`Webhook Error: ${err.message}`);

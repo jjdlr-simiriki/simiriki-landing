@@ -5,7 +5,9 @@
   "main": "script.js",
   "scripts": {
     "start": "node server.js",
-    "test": "echo \"No tests\""
+    "dev": "node server.js",
+    "test": "echo \"No tests\"",
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "",
