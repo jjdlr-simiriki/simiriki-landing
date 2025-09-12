@@ -19,6 +19,22 @@ jobs:
         with:
           submodules: true
           lfs: false
+      - name: Build static site
+        run: |
+          echo "Building static site by copying files to dist/"
+          mkdir -p dist
+          rsync -av \
+            --exclude='.git' \
+            --exclude='dist' \
+            --exclude='node_modules' \
+            --exclude='.github' \
+            --exclude='server.out.log' \
+            --exclude='server.err.log' \
+            --exclude='server.js' \
+            --exclude='csp-server.js' \
+            --exclude='create-stripe-bundle.js' \
+            --exclude='.env*' \
+            ./ dist/
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1

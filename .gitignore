@@ -6,3 +6,6 @@ server.err.log
 
 server*.log
 
+# Build output
+dist
+
