@@ -5,8 +5,9 @@ This repository contains the landing page for [simiriki.com](https://simiriki.co
 ## Setup
 
 1. Clone this repository.
-2. There is no build step. Open `index.html` in your browser to preview the site locally.
-3. Run a Lighthouse audit and address any warnings.
+2. Install dependencies with `npm install`.
+3. For local development, there is no build step. Open `index.html` in your browser to preview the site locally.
+4. For production deployment, the build process automatically creates a `dist` directory with optimized files.
 
 ## Content
 
@@ -15,12 +16,29 @@ This repository contains the landing page for [simiriki.com](https://simiriki.co
 ### Stripe Checkout
 
 1. Install dependencies with `npm install`.
-2. Set the environment variables `STRIPE_SECRET_KEY`, `STRIPE_PRICE_ID` and `STRIPE_WEBHOOK_SECRET`.
-3. Start the server with `npm start` and open `http://localhost:4242`.
+2. Set the environment variables `STRIPE_SECRET_KEY`, `STRIPE_PRICE_ID` and `STRIPE_WEBHOOK_SECRET` in your Azure Static Web Apps configuration.
+3. The API functions in `/api` handle Stripe checkout sessions and webhook events.
 
 ## Deployment
 
-Upload all files in this repository to your Azure Static Web Apps project or another static hosting provider.
+This repository is configured for Azure Static Web Apps deployment:
+
+- **App Location**: `dist` (automatically built from source files)
+- **API Location**: `api` (Azure Functions for Stripe integration)
+- **Build Process**: Copies all necessary files to `dist`, excluding server-side files
+- **Workflow**: Uses Azure-generated workflow for CI/CD
+
+### Environment Variables (Azure Portal)
+
+Configure these in your Azure Static Web Apps settings:
+- `STRIPE_SECRET_KEY`: Your Stripe secret key
+- `STRIPE_PRICE_ID`: Stripe price ID for the product
+- `STRIPE_WEBHOOK_SECRET`: Stripe webhook endpoint secret
+
+### API Endpoints
+
+- `POST /api/create-checkout-session`: Creates Stripe checkout session
+- `POST /api/webhook`: Handles Stripe webhook events
 
 ## Customization
 
