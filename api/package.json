@@ -1,0 +1,10 @@
+{
+  "name": "simiriki-api",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "dependencies": {
+    "simiriki-landing": "file:..",
+    "stripe": "14.0.0"
+  }
+}
