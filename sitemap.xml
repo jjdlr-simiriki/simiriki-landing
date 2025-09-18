@@ -1,7 +1,6 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.simiriki.com/</loc></url>
-  <url><loc>https://www.simiriki.com/privacy.html</loc></url>
-  <url><loc>https://www.simiriki.com/terms.html</loc></url>
-  <url><loc>https://www.simiriki.com/demo.html</loc></url>`n</urlset>
-
+  <url><loc>https://www.simiriki.com/</loc><lastmod>2025-09-18</lastmod></url>
+  <url><loc>https://www.simiriki.com/privacy.html</loc><lastmod>2025-09-18</lastmod></url>
+  <url><loc>https://www.simiriki.com/terms.html</loc><lastmod>2025-09-18</lastmod></url>
+</urlset>
