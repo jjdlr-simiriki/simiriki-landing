@@ -12,8 +12,12 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
   <style>html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Arial,sans-serif;color:#0b1020;background:#0b1020}a{color:inherit;text-decoration:none}</style>
   <link rel="stylesheet" href="styles.css"/>
+  <link rel="preconnect" href="https://forms.office.com" crossorigin>
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" href="https://www.simiriki.com/" hreflang="en">
+  <link rel="alternate" href="https://www.simiriki.com/" hreflang="es">
 </head>
-<body>
+<body><a class="skip" href="#main">Skip to content</a>
   <header class="nav">
     <div class="container nav__inner">
       <div class="brand">
@@ -30,7 +34,7 @@
     </div>
   </header>
 
-  <section class="hero">
+  <section id="main" class="hero">
     <div class="container hero__inner">
       <h1 data-i18n="hero_title">Automation & Cybersecurity — <span class="accent">built on Microsoft</span></h1>
       <p class="sub" data-i18n="hero_sub">We harden, automate, and ship. For LATAM SMBs that need results, not excuses.</p>
@@ -249,5 +253,17 @@
     document.getElementById("y").textContent = new Date().getFullYear();
   });
   </script>
+<script>
+function updateDesc(){
+  const m=document.querySelector('meta[name="description"]');
+  if(!m) return;
+  const es = document.documentElement.lang==='es';
+  m.setAttribute('content', es
+    ? 'Automatización y ciberseguridad para PyMEs de LATAM sobre Microsoft.'
+    : 'Automation + cybersecurity solutions for SMBs in LATAM, built on Microsoft.');
+}
+document.addEventListener('DOMContentLoaded', updateDesc);
+document.getElementById('lang-toggle')?.addEventListener('click', ()=>setTimeout(updateDesc,0));
+</script>
 </body>
 </html>
