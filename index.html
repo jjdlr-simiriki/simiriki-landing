@@ -16,8 +16,12 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="alternate" href="https://www.simiriki.com/" hreflang="en">
   <link rel="alternate" href="https://www.simiriki.com/" hreflang="es">
+  <link rel="preconnect" href="https://forms.office.com" crossorigin>
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" href="https://www.simiriki.com/" hreflang="en">
+  <link rel="alternate" href="https://www.simiriki.com/" hreflang="es">
 </head>
-<body><a class="skip" href="#main">Skip to content</a>
+<body><a class="skip" href="#main">Skip to content</a><a class="skip" href="#main">Skip to content</a>
   <header class="nav">
     <div class="container nav__inner">
       <div class="brand">
@@ -253,6 +257,18 @@
     document.getElementById("y").textContent = new Date().getFullYear();
   });
   </script>
+<script>
+function updateDesc(){
+  const m=document.querySelector('meta[name="description"]');
+  if(!m) return;
+  const es = document.documentElement.lang==='es';
+  m.setAttribute('content', es
+    ? 'Automatización y ciberseguridad para PyMEs de LATAM sobre Microsoft.'
+    : 'Automation + cybersecurity solutions for SMBs in LATAM, built on Microsoft.');
+}
+document.addEventListener('DOMContentLoaded', updateDesc);
+document.getElementById('lang-toggle')?.addEventListener('click', ()=>setTimeout(updateDesc,0));
+</script>
 <script>
 function updateDesc(){
   const m=document.querySelector('meta[name="description"]');
