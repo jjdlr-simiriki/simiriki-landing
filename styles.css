@@ -1,6 +1,5 @@
 :root{
-  --bg:#0b1020; --muted:#6b7280; --panel:#111936;
-  --accent:#82e6ff; --accent2:#a78bfa; --ring:rgba(130,230,255,.5); --white:#fff;
+  --bg:#0b1020; --muted:#6b7280; --panel:#111936; --accent:#82e6ff; --accent2:#a78bfa; --ring:rgba(130,230,255,.5); --white:#fff;
   --grad: radial-gradient(1200px 600px at 20% -10%, rgba(130,230,255,.18), transparent 60%),
           radial-gradient(800px 400px at 80% 10%, rgba(167,139,250,.18), transparent 60%),
           linear-gradient(180deg, #0b1020 0%, #0b1020 70%, #0b1020 100%);
@@ -27,33 +26,18 @@ h3{margin:0 0 10px}
 .section{padding:64px 0}
 .section--tinted{background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
 .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.card,.price,.case,.panel{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px}
+.card,.price,.panel{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px}
 .split{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:start}
 .panel{background:var(--panel)}
-.check li{list-style:none;margin:10px 0}
-.check li::before{content:"✔";color:#84e1bc;margin-right:8px}
-.price--featured{border-color:rgba(130,230,255,.5);box-shadow:0 12px 32px -16px var(--ring)}
 .money{font-weight:700;margin-top:-6px}
 .trust-logos{margin-top:22px;opacity:.95}
-
-.quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.quote{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px}
-.quote blockquote{margin:0 0 10px;font-size:18px}
-
+.form-embed{margin-top:8px}
 .footer{padding:28px 0;border-top:1px solid rgba(255,255,255,.08)}
 .footer__inner{display:flex;justify-content:space-between;align-items:center;color:#98a2b3}
-
 .lang-btn{margin-left:8px;border:1px solid rgba(255,255,255,.18);background:transparent;color:#fff;padding:6px 10px;border-radius:8px;cursor:pointer}
 .lang-btn:hover{background:rgba(255,255,255,.06)}
-.form-embed{margin-top:8px}
-
 /* a11y: skip link + focus */
 .skip{position:absolute;left:-9999px;top:-9999px}
 .skip:focus{left:8px;top:8px;background:#fff;color:#0b1020;padding:8px 12px;border-radius:8px;z-index:1000}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-
-@media (max-width:960px){
-  .grid3{grid-template-columns:1fr}
-  .split{grid-template-columns:1fr}
-  .quotes{grid-template-columns:1fr}
-}
+@media (max-width:960px){.grid3{grid-template-columns:1fr}.split{grid-template-columns:1fr}}
