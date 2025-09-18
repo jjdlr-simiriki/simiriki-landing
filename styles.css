@@ -46,3 +46,8 @@ h3{margin:0 0 10px}
 .skip{position:absolute;left:-9999px;top:-9999px}
 .skip:focus{left:8px;top:8px;background:#fff;color:#0b1020;padding:8px 12px;border-radius:8px;z-index:1000}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* a11y: skip link + visible focus */
+.skip{position:absolute;left:-9999px;top:-9999px}
+.skip:focus{left:8px;top:8px;background:#fff;color:#0b1020;padding:8px 12px;border-radius:8px;z-index:1000}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
