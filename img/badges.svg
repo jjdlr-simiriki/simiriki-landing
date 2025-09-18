@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="64" viewBox="0 0 720 64">
-  <rect width="720" height="64" fill="none"/>
-  <g fill="#a6adc8" font-family="Segoe UI,Arial,sans-serif" font-size="18">
-    <text x="10" y="40">Microsoft Solutions Partner</text>
-    <text x="300" y="40">Azure</text>
-    <text x="360" y="40">Defender</text>
-    <text x="450" y="40">Entra</text>
-    <text x="520" y="40">ISO 27001 / SOC 2 Advisory</text>
+<svg xmlns='http://www.w3.org/2000/svg' width='720' height='64' viewBox='0 0 720 64'>
+  <rect width='720' height='64' fill='none'/>
+  <g fill='#a6adc8' font-family='Segoe UI,Arial,sans-serif' font-size='18'>
+    <text x='10' y='40'>Microsoft Solutions Partner</text>
+    <text x='300' y='40'>Azure</text>
+    <text x='360' y='40'>Defender</text>
+    <text x='450' y='40'>Entra</text>
+    <text x='520' y='40'>ISO 27001 / SOC 2 Advisory</text>
   </g>
 </svg>
