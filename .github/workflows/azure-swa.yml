@@ -23,13 +23,14 @@ jobs:
         run: |
           echo "Copying static site into dist/"
           mkdir -p dist
-          rsync -av \
-            --exclude='.git' \
-            --exclude='.github' \
-            --exclude='dist' \
-            --exclude='node_modules' \
-            --exclude='api' \
-            ./ dist/
+          # Portable copy without rsync, includes dotfiles and preserves structure
+          tar -cf - \
+            --exclude='./dist' \
+            --exclude='./api' \
+            --exclude='./.git' \
+            --exclude='./.github' \
+            --exclude='./node_modules' \
+            . | tar -C dist -xf -
 
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
