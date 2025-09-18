@@ -1,0 +1,9 @@
+{
+  "globalHeaders": {
+    "Content-Security-Policy": "default-src 'self'; img-src 'self' data: https:; script-src 'self' https://www.clarity.ms; style-src 'self' 'unsafe-inline'; frame-src https://www.canva.com; connect-src 'self' https://www.clarity.ms; font-src 'self' data:",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "X-Content-Type-Options": "nosniff",
+    "Permissions-Policy": "geolocation=(), camera=(), microphone=()"
+  }
+}
+
