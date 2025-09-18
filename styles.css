@@ -11,8 +11,8 @@ body{background:var(--bg);color:var(--white);line-height:1.6}
 .nav{position:sticky;top:0;backdrop-filter:saturate(150%) blur(8px);background:rgba(11,16,32,.6);border-bottom:1px solid rgba(255,255,255,.06);z-index:50}
 .nav__inner{display:flex;align-items:center;justify-content:space-between;height:64px}
 .brand{display:flex;gap:10px;align-items:center;font-weight:600;letter-spacing:.2px}
-.links a{opacity:.9;margin-left:18px}
-.links .btn{margin-left:12px}
+.links{display:flex;align-items:center;gap:12px}
+.links a{opacity:.9}
 .hero{padding:96px 0;background:var(--grad)}
 .hero__inner{max-width:880px}
 h1{font-size:clamp(28px,5vw,48px);margin:0 0 10px}
@@ -37,4 +37,7 @@ h3{margin:0 0 10px}
 .money{font-weight:700;margin-top:-6px}
 .footer{padding:28px 0;border-top:1px solid rgba(255,255,255,.08)}
 .footer__inner{display:flex;justify-content:space-between;align-items:center;color:#98a2b3}
+.lang-btn{margin-left:8px;border:1px solid rgba(255,255,255,.18);background:transparent;color:#fff;padding:6px 10px;border-radius:8px;cursor:pointer}
+.lang-btn:hover{background:rgba(255,255,255,.06)}
+.form-embed{margin-top:8px}
 @media (max-width:960px){.grid3{grid-template-columns:1fr}.split{grid-template-columns:1fr}}
