@@ -2,6 +2,11 @@
   "routes": [
     {
       "route": "/*",
+      "redirect": "https://www.simiriki.com{path}",
+      "statusCode": 301
+    },
+    {
+      "route": "/*",
       "headers": {
         "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
         "X-Content-Type-Options": "nosniff",
