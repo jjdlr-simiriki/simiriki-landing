@@ -10,7 +10,7 @@
     "preview": "npx http-server -p 8080",
     "lint": "prettier --check .",
     "format": "prettier --write .",
-    "prepare": "husky install"
+    "prepare": "husky install || true"
   },
   "keywords": [],
   "author": "",
