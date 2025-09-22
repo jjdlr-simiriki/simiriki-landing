@@ -6,3 +6,5 @@ server.err.log
 
 server*.log
 
+# Local env files
+.env.*
