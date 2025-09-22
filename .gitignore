@@ -6,3 +6,13 @@ server.err.log
 
 server*.log
 
+# Local env files
+.env.*
+
+# Functions
+functions/**/.venv/
+functions/**/*.zip
+
+# Local dev logs
+.csp-server.log
+.csp-server.pid

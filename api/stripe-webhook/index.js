@@ -12,7 +12,8 @@ module.exports = async function (context, req) {
 
   let event;
   try {
-    const raw = req.rawBody || (typeof req.body === 'string' ? req.body : JSON.stringify(req.body || {}));
+    const raw =
+      req.rawBody || (typeof req.body === 'string' ? req.body : JSON.stringify(req.body || {}));
     event = stripe.webhooks.constructEvent(raw, sig, webhookSecret);
   } catch (err) {
     context.log.error('Stripe signature verification failed:', err.message);
@@ -38,4 +39,3 @@ module.exports = async function (context, req) {
     context.res = { status: 500, body: 'Internal error' };
   }
 };
-

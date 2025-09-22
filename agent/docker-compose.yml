@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  lead-reader:
+    build: .
+    env_file:
+      - .env
+    restart: unless-stopped
+    command: ['python', 'reader.py']
+    volumes:
+      - ./state:/state
