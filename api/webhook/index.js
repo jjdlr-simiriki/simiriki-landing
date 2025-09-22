@@ -12,7 +12,8 @@ module.exports = async function (context, req) {
 
   let event;
   try {
-    const raw = req.rawBody || (typeof req.body === 'string' ? req.body : JSON.stringify(req.body || {}));
+    const raw =
+      req.rawBody || (typeof req.body === 'string' ? req.body : JSON.stringify(req.body || {}));
     event = stripe.webhooks.constructEvent(raw, signature, webhookSecret);
   } catch (err) {
     context.log('Webhook signature verification failed.', err.message);

@@ -2,7 +2,7 @@ name: Uptime — SWA ping
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: '*/5 * * * *'
   workflow_dispatch: {}
 
 jobs:
@@ -34,4 +34,3 @@ jobs:
             } else {
               await github.rest.issues.createComment({ owner: context.repo.owner, repo: context.repo.repo, issue_number: issue.number, body });
             }
-

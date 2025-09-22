@@ -6,8 +6,10 @@
 - Include clear reproduction steps, affected files/URLs, and impact assessment.
 
 ## Dependency updates
+
 - We use Dependabot for npm and GitHub Actions. Security updates are prioritized.
 - For urgent CVEs, open a PR with `fix:` or `chore(security):` prefix and link CVE.
 
 ## Responsible disclosure
+
 - We appreciate responsible disclosure and will acknowledge contributors in release notes where appropriate.

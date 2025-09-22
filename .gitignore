@@ -12,3 +12,7 @@ server*.log
 # Functions
 functions/**/.venv/
 functions/**/*.zip
+
+# Local dev logs
+.csp-server.log
+.csp-server.pid

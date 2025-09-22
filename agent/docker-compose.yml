@@ -5,6 +5,6 @@ services:
     env_file:
       - .env
     restart: unless-stopped
-    command: ["python", "reader.py"]
+    command: ['python', 'reader.py']
     volumes:
       - ./state:/state

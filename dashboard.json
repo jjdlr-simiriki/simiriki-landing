@@ -44,7 +44,9 @@
             }
           }
         },
-        "metadata": { "model": { "timeRange": { "value": { "relative": { "duration": 24, "timeUnit": 1 } } } } }
+        "metadata": {
+          "model": { "timeRange": { "value": { "relative": { "duration": 24, "timeUnit": 1 } } } }
+        }
       }
     }
   ]

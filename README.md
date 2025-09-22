@@ -35,20 +35,26 @@ Upload all files in this repository to your Azure Static Web Apps project or ano
 # Simiriki Landing – Deploy
 
 ## Local preview
+
 `
 python -m http.server 8080
+
 # or
+
 npx serve . -l 8080
 `
 
 ## Analytics
+
 - Microsoft Clarity ID lives in <meta name="clarity-id"> (edit in index.html).
 - Loader is external (js/clarity.js), CSP-safe.
 
 ## Canva
+
 index.html -> replace the iframe src if you update the design.
 
 ## Azure Static Web Apps (SWA)
+
 1. In Azure Portal, create a Static Web App (Production).
 2. In GitHub → Settings → Secrets & variables → Actions:
    - AZURE_STATIC_WEB_APPS_API_TOKEN = deployment token from SWA.
@@ -57,11 +63,14 @@ index.html -> replace the iframe src if you update the design.
    - Deploys dist/ as app and pi/ as Functions.
 
 ### Environment settings (Functions)
+
 In SWA → **Configuration** (Application settings):
-- STRIPE_SECRET_KEY = sk_live_.../sk_test_...
-- STRIPE_PRICE_ID   = price_...
+
+- STRIPE*SECRET_KEY = sk_live*.../sk*test*...
+- STRIPE*PRICE_ID = price*...
 
 ## SWA Application Settings (Environment Variables)
+
 Set required variables in the Azure Portal:
 
 1. Azure Portal → Your Static Web App → Settings → Configuration → Application settings.
@@ -72,24 +81,30 @@ Set required variables in the Azure Portal:
 3. Save and allow the app/API to refresh.
 
 Local development:
+
 - Create a `.env` (not committed) or use your shell to export variables, then run `npm start`.
 - Example: `export STRIPE_SECRET_KEY=... STRIPE_PRICE_ID=... STRIPE_WEBHOOK_SECRET=... && npm start`
 
 ## Logs & Rollback
+
 - Tail local logs: `scripts/logs-swa.sh local .csp-server.log`
 - Roll back SWA to previous deploy: `scripts/swa-swap.sh 2` (requires `gh` authenticated)
 
 ## Backups & DR
+
 - Backup reports: `AZURE_STORAGE_CONNECTION_STRING=... scripts/backup-reports.sh`
 - DR checklist: see DR_CHECKLIST.md
 
 ### Custom domain
+
 Add www.simiriki.com in SWA → Custom domains. Follow CNAME/TXT prompts. Enable free SSL.
 
 ## Security headers
+
 staticwebapp.config.json sets CSP, Referrer-Policy, Permissions-Policy, X-Content-Type-Options.
 
 ## Related Repos
+
 - simiriki-ai (Next.js demo): interactive experience; host on SWA and link from this landing.
 - simiriki-landing-swa: older/alternate SWA landing. Recommended to consolidate into this repo.
 - simiriki-base44-core (Python): internal/core library; not directly used by this landing.

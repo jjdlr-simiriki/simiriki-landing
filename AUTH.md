@@ -11,5 +11,6 @@ Enable Microsoft login for Static Web Apps:
   - Set roles and invite users via SWA → Users.
 
 Testing:
+
 - Visit `https://<SWA_HOSTNAME>/.auth/login/aad` to initiate login.
 - Check `/.auth/me` for user claims.
