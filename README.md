@@ -95,6 +95,20 @@ Local development:
 - Backup reports: `AZURE_STORAGE_CONNECTION_STRING=... scripts/backup-reports.sh`
 - DR checklist: see DR_CHECKLIST.md
 
+## SWA Application Settings (Environment Variables)
+Set required variables in the Azure Portal:
+
+1. Azure Portal → Your Static Web App → Settings → Configuration → Application settings.
+2. Add or update the following keys:
+   - `STRIPE_SECRET_KEY`
+   - `STRIPE_PRICE_ID`
+   - `STRIPE_WEBHOOK_SECRET`
+3. Save and allow the app/API to refresh.
+
+Local development:
+- Create a `.env` (not committed) or use your shell to export variables, then run `npm start`.
+- Example: `export STRIPE_SECRET_KEY=... STRIPE_PRICE_ID=... STRIPE_WEBHOOK_SECRET=... && npm start`
+
 ### Custom domain
 
 Add www.simiriki.com in SWA → Custom domains. Follow CNAME/TXT prompts. Enable free SSL.
