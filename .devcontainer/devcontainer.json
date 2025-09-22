@@ -1,0 +1,20 @@
+{
+  "name": "simiriki-landing dev",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": { "version": "20" },
+    "ghcr.io/devcontainers/features/azure-cli:1": {}
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "customizations": {
+    "vscode": {
+      "settings": { "editor.formatOnSave": true },
+      "extensions": [
+        "ms-azuretools.vscode-azurefunctions",
+        "ms-azuretools.vscode-azurecli",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
+}
+

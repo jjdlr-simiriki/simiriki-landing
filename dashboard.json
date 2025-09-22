@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-08-01/dashboard.json#",
+  "resources": [
+    {
+      "type": "Microsoft.Portal/dashboards",
+      "name": "simiriki-overview",
+      "location": "mexicocentral",
+      "apiVersion": "2019-01-01-preview",
+      "properties": {
+        "lenses": {
+          "0": {
+            "order": 0,
+            "parts": {
+              "swaAvailability": {
+                "position": { "x": 0, "y": 0, "rowSpan": 3, "colSpan": 3 },
+                "metadata": {
+                  "inputs": [],
+                  "type": "Extension/HubsExtension/PartType/MarkdownPart",
+                  "settings": {
+                    "content": "# SWA Availability\nConfigure a workbook or metric chart here."
+                  }
+                }
+              },
+              "funcLatency": {
+                "position": { "x": 3, "y": 0, "rowSpan": 3, "colSpan": 3 },
+                "metadata": {
+                  "inputs": [],
+                  "type": "Extension/HubsExtension/PartType/MarkdownPart",
+                  "settings": {
+                    "content": "# Function Latency\nAdd App Insights chart for request duration."
+                  }
+                }
+              },
+              "blobCapacity": {
+                "position": { "x": 0, "y": 3, "rowSpan": 3, "colSpan": 6 },
+                "metadata": {
+                  "inputs": [],
+                  "type": "Extension/HubsExtension/PartType/MarkdownPart",
+                  "settings": {
+                    "content": "# Blob Storage Capacity\nAdd a metric chart for used capacity."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "metadata": { "model": { "timeRange": { "value": { "relative": { "duration": 24, "timeUnit": 1 } } } } }
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+# Disaster Recovery Checklist
+
+- DNS
+  - Confirm registrar access.
+  - Recreate CNAME for `www.simiriki.com` → SWA default hostname.
+  - Validate with `nslookup www.simiriki.com`.
+- Static Web App (SWA)
+  - If missing, recreate SWA and reconnect to GitHub branch `main`.
+  - Redeploy artifacts (rerun latest successful deploy workflow).
+- Storage
+  - Restore `reports` and `leads-raw` from backups.
+  - Use `scripts/backup-reports.sh` to rehydrate locally if needed.
+- Function App
+  - Recreate `func-simiriki-leadscore` and deploy via `make deploy-func`.
+  - Set `AZURE_STORAGE_CONNECTION_STRING` and Function host keys.
+- Secrets & Config
+  - Validate app settings for SWA and Function (Stripe keys, connection strings).
+  - If using Key Vault, re-link access policies and references.
+- Monitoring & Alerts
+  - Verify Application Insights is connected and alerts are active.
+- Validation
+  - Run uptime workflow manually.
+  - Seed 1–2 test leads with `scripts/seed-leads.sh`.

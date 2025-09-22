@@ -1,0 +1,15 @@
+name: Label Dependabot PRs
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  label:
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const issue_number = context.payload.pull_request.number;
+            await github.rest.issues.addLabels({ owner: context.repo.owner, repo: context.repo.repo, issue_number, labels: ['security','dependencies'] });

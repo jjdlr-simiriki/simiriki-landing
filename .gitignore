@@ -8,3 +8,7 @@ server*.log
 
 # Local env files
 .env.*
+
+# Functions
+functions/**/.venv/
+functions/**/*.zip

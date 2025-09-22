@@ -1,0 +1,37 @@
+name: Uptime — SWA ping
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping site
+        id: ping
+        env:
+          UPTIME_URL: ${{ vars.UPTIME_URL }}
+        run: |
+          URL="${UPTIME_URL:-https://www.simiriki.com}"
+          echo "Pinging $URL"
+          set +e
+          http_code=$(curl -sS -o /dev/null -w "%{http_code}" -m 15 "$URL")
+          echo "code=$http_code" >> $GITHUB_OUTPUT
+          test "$http_code" -ge 200 -a "$http_code" -lt 400
+      - name: Create/Update issue on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = 'Uptime check failed';
+            const body = `The scheduled uptime check failed for ${{ steps.ping.outputs.code }}.\n\nWorkflow: ${context.workflow}\nRun: ${context.runNumber}`;
+            const { data: issues } = await github.rest.issues.listForRepo({ owner: context.repo.owner, repo: context.repo.repo, state: 'open', labels: 'uptime' });
+            let issue = issues.find(i => i.title === title);
+            if (!issue) {
+              await github.rest.issues.create({ owner: context.repo.owner, repo: context.repo.repo, title, body, labels: ['uptime'] });
+            } else {
+              await github.rest.issues.createComment({ owner: context.repo.owner, repo: context.repo.repo, issue_number: issue.number, body });
+            }
+

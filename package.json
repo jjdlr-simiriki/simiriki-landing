@@ -5,9 +5,12 @@
   "main": "script.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js",
-    "test": "echo \"No tests\"",
-    "format": "prettier --write ."
+    "dev": "node csp-server.js",
+    "build": "echo 'No build step'",
+    "preview": "npx http-server -p 8080",
+    "lint": "prettier --check .",
+    "format": "prettier --write .",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +19,8 @@
   "dependencies": {
     "express": "^5.1.0",
     "stripe": "^18.4.0"
+  },
+  "devDependencies": {
+    "husky": "^9.0.11"
   }
 }
