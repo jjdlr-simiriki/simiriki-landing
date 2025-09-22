@@ -2,13 +2,13 @@ name: Deploy — Azure Static Web Apps
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch: {}
 
 concurrency:
-  group: "swa-deploy"
+  group: 'swa-deploy'
   cancel-in-progress: true
 
 permissions:
@@ -79,4 +79,3 @@ jobs:
           api_location: 'api'
           skip_app_build: true
           production_branch: 'main'
-
