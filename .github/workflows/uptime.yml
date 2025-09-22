@@ -22,7 +22,7 @@ jobs:
           test "$http_code" -ge 200 -a "$http_code" -lt 400
       - name: Create/Update issue on failure
         if: failure()
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const title = 'Uptime check failed';
