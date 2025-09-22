@@ -18,7 +18,7 @@
   "type": "commonjs",
   "dependencies": {
     "express": "^5.1.0",
-    "stripe": "^18.4.0"
+    "stripe": "^18.5.0"
   },
   "devDependencies": {
     "husky": "^9.0.11"
