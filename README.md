@@ -109,6 +109,14 @@ Local development:
 - Create a `.env` (not committed) or use your shell to export variables, then run `npm start`.
 - Example: `export STRIPE_SECRET_KEY=... STRIPE_PRICE_ID=... STRIPE_WEBHOOK_SECRET=... && npm start`
 
+## Logs & Rollback
+- Tail local logs: `scripts/logs-swa.sh local .csp-server.log`
+- Roll back SWA to previous deploy: `scripts/swa-swap.sh 2` (requires `gh` authenticated)
+
+## Backups & DR
+- Backup reports: `AZURE_STORAGE_CONNECTION_STRING=... scripts/backup-reports.sh`
+- DR checklist: see DR_CHECKLIST.md
+
 ### Custom domain
 
 Add www.simiriki.com in SWA → Custom domains. Follow CNAME/TXT prompts. Enable free SSL.
