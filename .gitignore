@@ -16,3 +16,9 @@ functions/**/*.zip
 # Local dev logs
 .csp-server.log
 .csp-server.pid
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+staticwebapp.config.backup*.json
