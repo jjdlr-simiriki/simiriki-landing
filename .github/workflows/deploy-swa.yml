@@ -19,7 +19,7 @@ jobs:
             package-lock.json
             api/package-lock.json
       - run: npm ci --no-audit --no-fund
-      - run: npx prettier --check .
+      - run: npx prettier@3 --check .
 
   build:
     needs: lint
@@ -47,5 +47,4 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: upload
-          app_location: dist
-          # api_location intentionally omitted
+          app_location: /
