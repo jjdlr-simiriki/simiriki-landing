@@ -2,90 +2,50 @@ name: Deploy — Azure Static Web Apps
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
-    branches: [main]
-  workflow_dispatch: {}
-
-concurrency:
-  group: 'swa-deploy'
-  cancel-in-progress: true
-
-permissions:
-  contents: read
-  pages: none
-  id-token: write
+    branches: [ main ]
 
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
           cache-dependency-path: |
             package-lock.json
             api/package-lock.json
-      - name: Prettier check
-        run: npx prettier --check .
+      - run: npm ci --no-audit --no-fund
+      - run: npx prettier --check .
 
   build:
     needs: lint
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Prepare dist artifact
-        run: |
-          rm -rf dist
-          mkdir -p dist
-          rsync -a --delete \
-            --exclude 'dist' \
-            --exclude '.git' \
-            --exclude '.github' \
-            --exclude 'node_modules' \
-            --exclude 'api' \
-            ./ dist/
-      - name: Upload dist artifact
-        uses: actions/upload-artifact@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          name: dist
-          path: dist
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            api/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      - run: echo "No build step for static site"
 
   deploy:
     needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Download dist artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: dist
-          path: dist
-      - name: Mask token
-        run: echo "::add-mask::${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}"
-      - name: Deploy (PR) — app only
-        if: github.event_name == 'pull_request'
-        uses: Azure/static-web-apps-deploy@v1
+      - uses: actions/checkout@v4
+      - uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: 'upload'
-          app_location: 'dist'
-          skip_app_build: true
-          production_branch: 'main'
-      - name: Deploy (main/push) — app only
-        if: github.event_name != 'pull_request'
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: 'upload'
-          app_location: 'dist'
-          skip_app_build: true
-          production_branch: 'main'
+          action: upload
+          app_location: dist
+          # api_location intentionally omitted for now
