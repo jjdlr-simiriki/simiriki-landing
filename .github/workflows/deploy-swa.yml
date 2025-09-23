@@ -48,4 +48,4 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: upload
           app_location: dist
-          # api_location intentionally omitted for now
+          # api_location intentionally omitted
