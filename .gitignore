@@ -21,3 +21,4 @@ functions/**/*.zip
 .venv/
 __pycache__/
 *.pyc
+staticwebapp.config.backup*.json
