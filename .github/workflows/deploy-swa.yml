@@ -2,9 +2,9 @@ name: Deploy — Azure Static Web Apps
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   lint:
@@ -19,7 +19,7 @@ jobs:
             package-lock.json
             api/package-lock.json
       - run: npm ci --no-audit --no-fund
-      - run: npx prettier --check .
+      - run: npx prettier@3 --check .
 
   build:
     needs: lint
